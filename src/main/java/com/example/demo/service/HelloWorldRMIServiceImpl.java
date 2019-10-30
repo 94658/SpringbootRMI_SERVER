@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 import java.util.Date;
 
-public class HelloWorldRMIimplService implements HelloWorldRMIService {
+public class HelloWorldRMIServiceImpl implements HelloWorldRMIService {
 
    //the service we want to expose
     @Override

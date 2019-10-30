@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.service.HelloWorldRMIService;
-import com.example.demo.service.HelloWorldRMIimplService;
+import com.example.demo.service.HelloWorldRMIServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiServiceExporter;
@@ -15,9 +15,9 @@ public class Config  {
     RemoteExporter registerRMI(){
 
         RmiServiceExporter exporter = new RmiServiceExporter();
-        exporter.setServiceName("helloworldrmiservice");
-        exporter.setServiceInterface(HelloWorldRMIService.class);
-        exporter.setService(new HelloWorldRMIimplService());
+        exporter.setServiceName("helloworldrmiservice"); //endpoint name
+        exporter.setServiceInterface(HelloWorldRMIService.class); //class of the interface we want to publish
+        exporter.setService(new HelloWorldRMIServiceImpl());  //instance of the service implementation class
         return exporter;
         }
     }
